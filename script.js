@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let keranjang = [];
 
 function tambahKeranjang(nama, harga) {
@@ -79,3 +80,6 @@ Total: Rp${total}%0A
 
   window.open(url, "_blank");
 }
+=======
+
+>>>>>>> 1f1b3097d29c70d02afe67b80ccd6c3174070ad6
