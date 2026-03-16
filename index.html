@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mayapada Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🛍️ Mayapada Store</h1>
+
+  <div class="container">
+
+    <!-- PRODUK -->
+    <div class="produk-list">
+      <div class="card">
+        <img src="https://via.placeholder.com/150">
+        <h3>Produk 1</h3>
+        <p>Rp50.000</p>
+        <button onclick="tambahKeranjang('Produk 1', 50000)">+ Keranjang</button>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/150">
+        <h3>Produk 2</h3>
+        <p>Rp75.000</p>
+        <button onclick="tambahKeranjang('Produk 2', 75000)">+ Keranjang</button>
+      </div>
+    </div>
+
+    <!-- KERANJANG -->
+    <div class="keranjang">
+      <h2>🛒 Keranjang</h2>
+      <ul id="list-keranjang"></ul>
+      <h3>Total: Rp<span id="total">0</span></h3>
+
+      <h3>Data Pembeli</h3>
+      <input type="text" id="nama" placeholder="Nama">
+      <input type="text" id="alamat" placeholder="Alamat">
+
+      <button onclick="checkout()">Checkout ke WhatsApp</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
