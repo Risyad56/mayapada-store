@@ -10,19 +10,18 @@
 
 <!-- HEADER -->
 <header class="header">
-  <div class="logo-container">
-    <img src="images.jpg" class="logo">
-    <h1>Mayapada Store</h1>
-  </div>
-
-  <!-- SEARCH -->
-  <input type="text" id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
+  <h1>Mayapada Store</h1>
 </header>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="overlay">
-    <h2>Selamat Datang di Mayapada Store</h2>
+    <h2>Selamat Datang</h2>
     <p>Marketplace HMTG Mayapada</p>
   </div>
 </section>
@@ -37,35 +36,31 @@
 
 <!-- PRODUK -->
 <section class="produk">
-  <h2>Produk Kami</h2>
   <div class="produk-container" id="produk-list"></div>
 </section>
 
 <!-- NOTIF -->
-<div id="notif" class="notif">✔ Ditambahkan ke keranjang</div>
+<div id="notif" class="notif">✔ Ditambahkan</div>
 
-<!-- CART BUTTON (ADA COUNT) -->
+<!-- CART BUTTON -->
 <button class="cart-btn" onclick="bukaCart()">
   🛒 <span id="cart-count">0</span>
 </button>
 
-<!-- POPUP CART -->
+<!-- CART -->
 <div id="cart" class="cart">
   <h2>Keranjang</h2>
   <button onclick="tutupCart()">Tutup</button>
 
   <ul id="list-keranjang"></ul>
-
   <h3>Total: Rp<span id="total">0</span></h3>
 
-  <input type="text" id="nama" placeholder="Nama">
-  <input type="text" id="alamat" placeholder="Alamat">
+  <input id="nama" placeholder="Nama">
+  <input id="alamat" placeholder="Alamat">
 
-  <button onclick="checkout()">Checkout ke WhatsApp</button>
+  <button onclick="checkout()">Checkout</button>
 </div>
 
-<!-- SCRIPT -->
 <script src="script.js"></script>
-
 </body>
 </html>
