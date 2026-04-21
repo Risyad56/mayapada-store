@@ -1,6 +1,156 @@
-body {
-  background: red !important;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* HERO (BACKGROUND UTAMA) */
+.hero {
+  height: 100vh;
+  background: url("VBGHMTG.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.overlay h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 18px;
+}
+
+/* PRODUK */
+.produk {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f5f7fa;
+  color: black;
+}
+
+.produk h2 {
+  margin-bottom: 30px;
+}
+
+/* GRID PRODUK */
+.produk-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.produk-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
+
+.produk-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ANIMASI */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.produk-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.produk-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* GAMBAR */
+.produk-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.produk-card:hover img {
+  transform: scale(1.05);
+}
+
+/* HARGA */
+.harga {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* BUTTON */
+.produk-card button {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.produk-card button:hover {
+  background: #27ae60;
+}
+
+.produk-card button:active {
+  transform: scale(0.95);
+}
+
+/* BADGE */
 .badge {
   position: absolute;
   background: red;
@@ -11,37 +161,49 @@ body {
   top: 10px;
   left: 10px;
 }
-.produk-card {
-  position: relative;
-}
-.produk-card {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s forwards;
+
+/* KERANJANG */
+.keranjang {
+  padding: 40px 20px;
+  background: white;
+  color: black;
+  text-align: center;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+#list-keranjang {
+  list-style: none;
+  padding: 0;
+}
+
+#list-keranjang li {
+  margin: 15px 0;
+}
+
+/* INPUT */
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+}
+
+/* BUTTON WA */
+.keranjang button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .overlay h2 {
+    font-size: 24px;
   }
-}
-.produk-card:nth-child(2) {
-  animation-delay: 0.2s;
-}
 
-.produk-card:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.produk-card button {
-  background: linear-gradient(135deg, #2ecc71, #27ae60);
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
-.produk-card img {
-  transition: 0.3s;
-}
-
-.produk-card:hover img {
-  transform: scale(1.05);
+  .hero {
+    height: 60vh;
+  }
 }
