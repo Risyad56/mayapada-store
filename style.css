@@ -1,3 +1,47 @@
 body {
   background: red !important;
 }
+.badge {
+  position: absolute;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  top: 10px;
+  left: 10px;
+}
+.produk-card {
+  position: relative;
+}
+.produk-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.produk-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.produk-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.produk-card button {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.produk-card img {
+  transition: 0.3s;
+}
+
+.produk-card:hover img {
+  transform: scale(1.05);
+}

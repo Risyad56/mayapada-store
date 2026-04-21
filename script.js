@@ -22,10 +22,15 @@ function tampilKeranjang() {
     total += item.harga * item.qty;
 
     let li = document.createElement("li");
-    li.innerHTML = `
-      ${item.nama} - Rp${item.harga} x ${item.qty}
-      <button onclick="hapusItem(${index})">❌</button>
-    `;
+  li.innerHTML = `
+  <strong>${item.nama}</strong>
+  <br>
+  Qty: ${item.qty}
+  <br>
+  Subtotal: Rp${item.harga * item.qty}
+  <br>
+  <button onclick="hapusItem(${index})">❌ Hapus</button>
+`;
     list.appendChild(li);
   });
 
