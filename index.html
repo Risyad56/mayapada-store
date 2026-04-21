@@ -1,66 +1,134 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Mayapada Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Online</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header{
+  background:#1e3a8a;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* SECTION */
+section{
+  padding:40px 20px;
+  background:#f5f7fb;
+}
+
+/* JUDUL PRODUK */
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#111827;
+}
+
+/* GRID PRODUK */
+.product-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:20px;
+}
+
+/* CARD PRODUK */
+.product-card{
+  background:white;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition:0.3s;
+  text-align:center;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+}
+
+/* GAMBAR */
+.product-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* NAMA PRODUK */
+.product-card h3{
+  margin:10px 0;
+  color:#111827;
+}
+
+/* HARGA */
+.price{
+  color:#2563eb;
+  font-weight:bold;
+}
+
+/* BUTTON */
+button{
+  margin-top:10px;
+  padding:10px;
+  width:100%;
+  border:none;
+  background:#1e3a8a;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#3749c4;
+}
+</style>
+
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <h1>Mayapada Store</h1>
+<header>
+  TOKO ONLINE KITA
 </header>
 
-<!-- SEARCH -->
-<div class="search-box">
-  <input type="text" id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
-</div>
+<section>
+  <h2>Produk Kami</h2>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="overlay">
-    <h2>Selamat Datang</h2>
-    <p>Marketplace HMTG Mayapada</p>
+  <div class="product-container">
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300" alt="">
+      <h3>Produk 1</h3>
+      <p class="price">Rp 50.000</p>
+      <button>Beli</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300" alt="">
+      <h3>Produk 2</h3>
+      <p class="price">Rp 75.000</p>
+      <button>Beli</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300" alt="">
+      <h3>Produk 3</h3>
+      <p class="price">Rp 100.000</p>
+      <button>Beli</button>
+    </div>
+
   </div>
 </section>
 
-<!-- FILTER -->
-<section class="filter">
-  <button onclick="filterKategori('all')">Semua</button>
-  <button onclick="filterKategori('baju')">Baju</button>
-  <button onclick="filterKategori('tas')">Tas</button>
-  <button onclick="filterKategori('aksesoris')">Aksesoris</button>
-</section>
-
-<!-- PRODUK -->
-<section class="produk">
-  <div class="produk-container" id="produk-list"></div>
-</section>
-
-<!-- NOTIF -->
-<div id="notif" class="notif">✔ Ditambahkan</div>
-
-<!-- CART BUTTON -->
-<button class="cart-btn" onclick="bukaCart()">
-  🛒 <span id="cart-count">0</span>
-</button>
-
-<!-- CART -->
-<div id="cart" class="cart">
-  <h2>Keranjang</h2>
-  <button onclick="tutupCart()">Tutup</button>
-
-  <ul id="list-keranjang"></ul>
-  <h3>Total: Rp<span id="total">0</span></h3>
-
-  <input id="nama" placeholder="Nama">
-  <input id="alamat" placeholder="Alamat">
-
-  <button onclick="checkout()">Checkout</button>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
