@@ -1,69 +1,98 @@
-<<<<<<< HEAD
 body {
-  font-family: Arial;
-  background: #f5f5f5;
   margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.8);
+  position: sticky;
+  top: 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.logo-container h1 {
+  font-size: 24px;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url("VBGHMTG.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 10px;
   text-align: center;
 }
 
-h1 {
-  background: #2ecc71;
-  color: white;
-  padding: 15px;
+.overlay h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
-.container {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
+.overlay p {
+  font-size: 18px;
 }
 
-.produk-list {
+/* PRODUK */
+.produk {
+  padding: 60px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.produk h2 {
+  margin-bottom: 10px;
+}
+
+.coming {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.produk-container {
   display: flex;
+  justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.card {
-  background: white;
-  padding: 15px;
+.produk-card {
+  width: 200px;
+  height: 200px;
+  background: #222;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
 }
 
-.card img {
-  width: 150px;
+.produk-card:hover {
+  transform: scale(1.05);
 }
 
-button {
-  background: #2ecc71;
-  color: white;
-  padding: 8px;
-  border: none;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 5px;
+.kosong {
+  border: 2px dashed #555;
 }
-
-.hapus {
-  background: red;
-}
-
-.qty-btn {
-  background: #3498db;
-}
-
-.keranjang {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 320px;
-}
-
-input {
-  width: 90%;
-  padding: 8px;
-  margin: 5px 0;
-}
-=======
-# mayapada-store
->>>>>>> 1f1b3097d29c70d02afe67b80ccd6c3174070ad6
