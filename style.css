@@ -1,73 +1,10 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
-}
-
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.8);
-  position: sticky;
-  top: 0;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-}
-
-.logo-container h1 {
-  font-size: 24px;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  background: url("VBGHMTG.png") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.overlay {
-  background: rgba(0,0,0,0.6);
-  padding: 40px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.overlay h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.overlay p {
-  font-size: 18px;
-}
-
 /* PRODUK */
 .produk {
-  padding: 60px 20px;
+  padding: 50px 20px;
   text-align: center;
-  background: #111;
 }
 
 .produk h2 {
-  margin-bottom: 10px;
-}
-
-.coming {
-  color: #aaa;
   margin-bottom: 30px;
 }
 
@@ -79,20 +16,70 @@ body {
 }
 
 .produk-card {
-  width: 200px;
-  height: 200px;
-  background: #222;
+  background: white;
+  padding: 20px;
+  width: 220px;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
 .produk-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
-.kosong {
-  border: 2px dashed #555;
+.produk-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.harga {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.produk-card button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.produk-card button:hover {
+  background: #27ae60;
+}
+
+/* KERANJANG */
+.keranjang {
+  padding: 50px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+#list-keranjang {
+  list-style: none;
+  padding: 0;
+}
+
+#list-keranjang li {
+  margin: 10px 0;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+}
+
+.keranjang button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
 }
