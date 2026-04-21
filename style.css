@@ -55,6 +55,25 @@ body {
 }
 
 /* PRODUK */
+.produk {
+  background: rgba(255, 255, 255, 0.15); /* transparan terang */
+  backdrop-filter: blur(8px);
+  margin: 30px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.produk h2 {
+  color: white; /* kontras ke background */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.produk h2 {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
 .produk-container {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
