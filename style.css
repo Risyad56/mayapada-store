@@ -9,6 +9,30 @@ body {
 body {
   background: url("VBGHMTG.png") center/cover fixed;
 }
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container h1 {
+  font-size: 20px;
+}
+@media(max-width:768px){
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-container h1 {
+    font-size: 16px;
+  }
+}
 
 /* HEADER */
 .header {
