@@ -1,6 +1,6 @@
 /* FORMAT RUPIAH */
 function formatRupiah(angka) {
-  return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return new Intl.NumberFormat("id-ID").format(angka);
 }
 
 /* DATA PRODUK */
@@ -81,15 +81,12 @@ function tampilCart(){
     total += subtotal;
 
     list.innerHTML += `
-      <li>
-        <strong>${item.nama}</strong><br>
-        ${item.qty} x Rp${formatRupiah(item.harga)}<br>
-        Subtotal: Rp${formatRupiah(subtotal)}<br>
-        <button onclick="tambahQty(${index})">➕</button>
-        <button onclick="kurangQty(${index})">➖</button>
-        <button onclick="hapus(${index})">❌</button>
-      </li>
-    `;
+  <li>
+    <strong>${item.nama}</strong><br>
+    ${item.qty} x Rp${formatRupiah(item.harga)}<br>
+    Subtotal: Rp${formatRupiah(subtotal)}
+  </li>
+` ;
   });
 
   document.getElementById("total").innerText = formatRupiah(total);
