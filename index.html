@@ -14,54 +14,38 @@
     <img src="images.jpg" class="logo">
     <h1>Mayapada Store</h1>
   </div>
+
+  <input type="text" id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="overlay">
-    <h2>Selamat Datang di Mayapada Store</h2>
-    <p>Merchandise & inventaris HMTG</p>
+    <h2>Selamat Datang</h2>
+    <p>Marketplace HMTG Mayapada</p>
   </div>
+</section>
+
+<!-- FILTER -->
+<section class="filter">
+  <button onclick="filterKategori('all')">Semua</button>
+  <button onclick="filterKategori('baju')">Baju</button>
+  <button onclick="filterKategori('tas')">Tas</button>
+  <button onclick="filterKategori('aksesoris')">Aksesoris</button>
 </section>
 
 <!-- PRODUK -->
 <section class="produk">
-  <h2>Produk Kami</h2>
-
-  <div class="produk-container">
-
-    <div class="produk-card">
-      <span class="badge">Best Seller</span>
-      <img src="images.jpg">
-      <h3>Kaos HMTG</h3>
-      <p class="harga">Rp50.000</p>
-      <button onclick="tambahKeranjang('Kaos HMTG',50000)">+ Keranjang</button>
-    </div>
-
-    <div class="produk-card">
-      <img src="images.jpg">
-      <h3>Totebag</h3>
-      <p class="harga">Rp75.000</p>
-      <button onclick="tambahKeranjang('Totebag',75000)">+ Keranjang</button>
-    </div>
-
-    <div class="produk-card">
-      <img src="images.jpg">
-      <h3>Sticker</h3>
-      <p class="harga">Rp20.000</p>
-      <button onclick="tambahKeranjang('Sticker',20000)">+ Keranjang</button>
-    </div>
-
-  </div>
+  <div class="produk-container" id="produk-list"></div>
 </section>
 
 <!-- NOTIF -->
-<div id="notif" class="notif">✔</div>
+<div id="notif" class="notif">✔ Ditambahkan</div>
 
-<!-- BUTTON CART -->
+<!-- CART BUTTON -->
 <button class="cart-btn" onclick="bukaCart()">🛒</button>
 
-<!-- POPUP CART -->
+<!-- CART -->
 <div id="cart" class="cart">
   <h2>Keranjang</h2>
   <button onclick="tutupCart()">Tutup</button>
@@ -69,13 +53,12 @@
   <ul id="list-keranjang"></ul>
   <h3>Total: Rp<span id="total">0</span></h3>
 
-  <input type="text" id="nama" placeholder="Nama">
-  <input type="text" id="alamat" placeholder="Alamat">
+  <input id="nama" placeholder="Nama">
+  <input id="alamat" placeholder="Alamat">
 
   <button onclick="checkout()">Checkout</button>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
