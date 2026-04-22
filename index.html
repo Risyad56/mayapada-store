@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Mayapada Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <div class="logo-container">
+  <div class="logo-box">
     <img src="images.jpg" class="logo">
     <h1>Mayapada Store</h1>
   </div>
 </header>
 
+<!-- SEARCH -->
 <div class="search-box">
   <input type="text" id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="overlay">
     <h2>Selamat Datang</h2>
@@ -26,35 +28,36 @@
   </div>
 </section>
 
-<section class="filter">
-  <button onclick="filterKategori('all')">Semua</button>
-  <button onclick="filterKategori('baju')">Baju</button>
-  <button onclick="filterKategori('tas')">Tas</button>
-  <button onclick="filterKategori('aksesoris')">Aksesoris</button>
-</section>
+<!-- FILTER -->
+<div class="filter">
+  <button onclick="filterProduk('all')">Semua</button>
+  <button onclick="filterProduk('baju')">Baju</button>
+  <button onclick="filterProduk('tas')">Tas</button>
+  <button onclick="filterProduk('aksesoris')">Aksesoris</button>
+</div>
 
-<!-- 🔥 PASTI MUNCUL -->
+<!-- PRODUK -->
 <section class="produk">
   <h2>Produk Kami</h2>
   <div class="produk-container" id="produk-list"></div>
 </section>
 
-<button class="cart-btn" onclick="bukaCart()">🛒</button>
+<!-- CART BUTTON -->
+<button class="cart-btn" onclick="toggleCart()">🛒 <span id="count">0</span></button>
 
-<div id="cart" class="cart">
+<!-- CART -->
+<div class="cart" id="cart">
   <h2>Keranjang</h2>
-  <button onclick="tutupCart()">Tutup</button>
-
   <ul id="list-keranjang"></ul>
-  <h3>Total: Rp<span id="total">0</span></h3>
+  <p>Total: Rp <span id="total">0</span></p>
 
   <input id="nama" placeholder="Nama">
   <input id="alamat" placeholder="Alamat">
 
-  <button onclick="checkout()">Checkout</button>
+  <button onclick="checkout()">Checkout WhatsApp</button>
 </div>
 
-<div id="notif" class="notif">✔ Ditambahkan</div>
+<div class="notif" id="notif">Ditambahkan ke keranjang</div>
 
 <script src="script.js"></script>
 </body>
