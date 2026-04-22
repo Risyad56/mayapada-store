@@ -102,3 +102,6 @@ function checkout(){
 
 // INIT
 tampilProduk(produk);
+
+<div class="produk-card">
+  <div class="badge">NEW</div>
