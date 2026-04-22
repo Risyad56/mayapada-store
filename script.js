@@ -1,10 +1,25 @@
-let produk = [
-  {nama:"Kaos HMTG", harga:50000, kategori:"baju", img:"images.jpg"},
-  {nama:"Tas HMTG", harga:75000, kategori:"tas", img:"images.jpg"},
-  {nama:"Stiker HMTG", harga:10000, kategori:"aksesoris", img:"images.jpg"}
-];
+let produk = JSON.parse(localStorage.getItem("produk")) || [];
 
 let keranjang = [];
+
+// SIMPAN PRODUK
+function saveProduk(){
+  localStorage.setItem("produk", JSON.stringify(produk));
+}
+
+// TAMBAH PRODUK (ADMIN)
+function tambahProduk(){
+  let nama = document.getElementById("namaProduk").value;
+  let harga = parseInt(document.getElementById("hargaProduk").value);
+  let kategori = document.getElementById("kategoriProduk").value;
+  let img = document.getElementById("gambarProduk").value;
+
+  produk.push({nama,harga,kategori,img});
+  saveProduk();
+  tampilProduk(produk);
+
+  alert("Produk ditambahkan!");
+}
 
 // TAMPIL PRODUK
 function tampilProduk(list){
@@ -25,11 +40,8 @@ function tampilProduk(list){
 
 // FILTER
 function filterProduk(kat){
-  if(kat=="all"){
-    tampilProduk(produk);
-  }else{
-    tampilProduk(produk.filter(p=>p.kategori==kat));
-  }
+  if(kat=="all") tampilProduk(produk);
+  else tampilProduk(produk.filter(p=>p.kategori==kat));
 }
 
 // SEARCH
@@ -41,15 +53,10 @@ function cariProduk(){
 // KERANJANG
 function tambahKeranjang(nama,harga){
   let item = keranjang.find(i=>i.nama===nama);
-  if(item){
-    item.qty++;
-  }else{
-    keranjang.push({nama,harga,qty:1});
-  }
-  updateCart();
+  if(item) item.qty++;
+  else keranjang.push({nama,harga,qty:1});
 
-  document.getElementById("notif").style.display="block";
-  setTimeout(()=>document.getElementById("notif").style.display="none",1000);
+  updateCart();
 }
 
 function updateCart(){
@@ -62,10 +69,8 @@ function updateCart(){
     total+=subtotal;
 
     list.innerHTML+=`
-      <li>
-        ${item.nama} (${item.qty}) - Rp ${subtotal.toLocaleString("id-ID")}
-        <button onclick="hapusItem(${i})">❌</button>
-      </li>
+      <li>${item.nama} (${item.qty}) - Rp ${subtotal.toLocaleString("id-ID")}
+      <button onclick="hapusItem(${i})">❌</button></li>
     `;
   });
 
@@ -78,12 +83,12 @@ function hapusItem(i){
   updateCart();
 }
 
-// TOGGLE CART
+// CART
 function toggleCart(){
   document.getElementById("cart").classList.toggle("active");
 }
 
-// CHECKOUT WA
+// CHECKOUT
 function checkout(){
   let nama = document.getElementById("nama").value;
   let alamat = document.getElementById("alamat").value;
