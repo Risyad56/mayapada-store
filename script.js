@@ -13,12 +13,15 @@ function tampilProduk(list){
 
   list.forEach(p=>{
     container.innerHTML += `
-      <div class="produk-card">
-        <img src="${p.img}">
-        <h3>${p.nama}</h3>
-        <p class="harga">Rp ${p.harga.toLocaleString("id-ID")}</p>
-        <button onclick="tambahKeranjang('${p.nama}',${p.harga})">+ Keranjang</button>
-      </div>
+  <div class="produk-card">
+    <div class="badge">NEW</div>
+    <img src="${p.img}">
+    <h3>${p.nama}</h3>
+    <p class="harga">Rp ${p.harga.toLocaleString("id-ID")}</p>
+    <button onclick="tambahKeranjang('${p.nama}',${p.harga})">
+      + Keranjang
+    </button>
+  </div>
     `;
   });
 }
