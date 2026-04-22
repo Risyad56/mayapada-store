@@ -2,13 +2,13 @@ function formatRupiah(angka){
   return new Intl.NumberFormat("id-ID").format(angka);
 }
 
-let produk = [
+let produk=[
   {nama:"Kaos HMTG",harga:50000,kategori:"baju",img:"images.jpg"},
   {nama:"Totebag",harga:75000,kategori:"tas",img:"images.jpg"},
   {nama:"Sticker",harga:20000,kategori:"aksesoris",img:"images.jpg"}
 ];
 
-let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+let keranjang=JSON.parse(localStorage.getItem("keranjang"))||[];
 
 function simpan(){
   localStorage.setItem("keranjang",JSON.stringify(keranjang));

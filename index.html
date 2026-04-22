@@ -8,17 +8,14 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <h1>Mayapada Store</h1>
 </header>
 
-<!-- SEARCH -->
 <div class="search-box">
   <input type="text" id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="overlay">
     <h2>Selamat Datang</h2>
@@ -26,7 +23,6 @@
   </div>
 </section>
 
-<!-- FILTER -->
 <section class="filter">
   <button onclick="filterKategori('all')">Semua</button>
   <button onclick="filterKategori('baju')">Baju</button>
@@ -34,20 +30,17 @@
   <button onclick="filterKategori('aksesoris')">Aksesoris</button>
 </section>
 
-<!-- PRODUK -->
 <section class="produk">
+  <h2>Produk Kami</h2>
   <div class="produk-container" id="produk-list"></div>
 </section>
 
-<!-- NOTIF -->
 <div id="notif" class="notif">✔ Ditambahkan</div>
 
-<!-- CART BUTTON -->
 <button class="cart-btn" onclick="bukaCart()">
   🛒 <span id="cart-count">0</span>
 </button>
 
-<!-- CART -->
 <div id="cart" class="cart">
   <h2>Keranjang</h2>
   <button onclick="tutupCart()">Tutup</button>
