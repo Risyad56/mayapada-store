@@ -102,6 +102,11 @@ function checkout(){
 
 // INIT
 tampilProduk(produk);
+setTimeout(()=>{
+  document.querySelectorAll(".produk-card").forEach((el,i)=>{
+    el.style.animationDelay = (i * 0.1) + "s";
+  });
+},50);
 
 <div class="produk-card">
   <div class="badge">NEW</div>
