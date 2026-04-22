@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <title>Mayapada Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=final1">
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header">
-  <div class="logo-box">
-    <img src="images.jpg" class="logo">
-    <h1>Mayapada Store</h1>
-  </div>
+  <img src="images.jpg" class="logo">
+  <h1>Mayapada Store</h1>
 </header>
 
 <!-- SEARCH -->
@@ -40,7 +38,7 @@
 <!-- PRODUK -->
 <section class="produk">
   <h2>Produk Kami</h2>
-  <div class="produk-container" id="produk-list"></div>
+  <div id="produk-list" class="produk-container"></div>
 </section>
 
 <!-- CART BUTTON -->
@@ -48,20 +46,18 @@
 
 <!-- CART -->
 <div class="cart" id="cart">
-  <button class="close-cart" onclick="tutupCart()">❌</button>
-
+  <button class="close-cart" onclick="tutupCart()">✖</button>
   <h2>Keranjang</h2>
   <ul id="list-keranjang"></ul>
   <p>Total: Rp <span id="total">0</span></p>
 
   <input id="nama" placeholder="Nama">
   <input id="alamat" placeholder="Alamat">
-
   <button onclick="checkout()">Checkout WhatsApp</button>
 </div>
 
 <div class="notif" id="notif">Ditambahkan ke keranjang</div>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=final1"></script>
 </body>
 </html>
