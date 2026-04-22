@@ -9,7 +9,10 @@
 <body>
 
 <header class="header">
-  <h1>Mayapada Store</h1>
+  <div class="logo-container">
+    <img src="images.jpg" class="logo">
+    <h1>Mayapada Store</h1>
+  </div>
 </header>
 
 <div class="search-box">
@@ -30,12 +33,11 @@
   <button onclick="filterKategori('aksesoris')">Aksesoris</button>
 </section>
 
+<!-- 🔥 INI YANG TADI HILANG -->
 <section class="produk">
   <h2>Produk Kami</h2>
   <div class="produk-container" id="produk-list"></div>
 </section>
-
-<div id="notif" class="notif">✔ Ditambahkan</div>
 
 <button class="cart-btn" onclick="bukaCart()">
   🛒 <span id="cart-count">0</span>
@@ -53,6 +55,8 @@
 
   <button onclick="checkout()">Checkout</button>
 </div>
+
+<div id="notif" class="notif">✔ Ditambahkan</div>
 
 <script src="script.js"></script>
 </body>

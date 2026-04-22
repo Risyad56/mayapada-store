@@ -1,64 +1,106 @@
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body{
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   background:url("VBGHMTG.png") no-repeat center center fixed;
   background-size:cover;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header{
   display:flex;
   justify-content:center;
-  padding:20px;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(5px);
-}
-.header h1{
-  color:white;
+  align-items:center;
+  padding:15px;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(6px);
 }
 
-/* SEARCH */
+/* LOGO + TEXT */
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  width:40px;
+  height:40px;
+  object-fit:contain;
+}
+
+.logo-container h1{
+  color:white;
+  font-size:22px;
+}
+
+/* ================= SEARCH ================= */
 .search-box{
   text-align:center;
   padding:15px;
 }
+
 .search-box input{
   width:80%;
-  padding:10px;
+  max-width:600px;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  outline:none;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   height:40vh;
   display:flex;
   justify-content:center;
   align-items:center;
 }
+
 .overlay{
   background:rgba(0,0,0,0.6);
   color:white;
-  padding:20px;
-  border-radius:10px;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
 }
 
-/* FILTER */
+.overlay h2{
+  font-size:28px;
+}
+
+/* ================= FILTER ================= */
 .filter{
   text-align:center;
   padding:20px;
 }
+
 .filter button{
   margin:5px;
-  padding:10px;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#ecf0f1;
+  transition:0.2s;
 }
 
-/* 🔥 PRODUK SECTION FIX */
+.filter button:hover{
+  background:#2ecc71;
+  color:white;
+}
+
+/* ================= PRODUK SECTION ================= */
 .produk{
   background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(10px);
   margin:30px;
-  border-radius:15px;
-  padding:20px;
+  border-radius:20px;
+  padding:30px;
 }
 
 /* JUDUL */
@@ -66,9 +108,10 @@ body{
   color:white;
   text-align:center;
   font-size:28px;
-  margin-bottom:20px;
-  text-shadow:2px 2px 5px rgba(0,0,0,0.5);
+  margin-bottom:25px;
+  text-shadow:2px 2px 6px rgba(0,0,0,0.6);
 }
+
 .produk h2::after{
   content:"";
   display:block;
@@ -76,36 +119,65 @@ body{
   height:3px;
   background:#2ecc71;
   margin:10px auto;
+  border-radius:5px;
 }
 
-/* CARD */
+/* GRID PRODUK */
 .produk-container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:25px;
 }
 
+/* CARD PRODUK */
 .produk-card{
-  background:rgba(255,255,255,0.9);
+  background:rgba(255,255,255,0.92);
   padding:15px;
   border-radius:15px;
   box-shadow:0 8px 20px rgba(0,0,0,0.25);
   transition:0.3s;
 }
+
 .produk-card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-8px) scale(1.02);
 }
+
+/* GAMBAR */
 .produk-card img{
   width:100%;
   border-radius:10px;
 }
 
+/* NAMA */
+.produk-card h3{
+  margin:10px 0;
+  color:#333;
+}
+
+/* HARGA */
 .harga{
   color:#27ae60;
   font-weight:bold;
+  margin-bottom:10px;
 }
 
-/* CART */
+/* BUTTON */
+.produk-card button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#2ecc71;
+  color:white;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.produk-card button:hover{
+  background:#27ae60;
+}
+
+/* ================= CART ================= */
 .cart-btn{
   position:fixed;
   bottom:20px;
@@ -115,25 +187,60 @@ body{
   background:#2ecc71;
   color:white;
   border:none;
+  font-size:18px;
+  cursor:pointer;
 }
 
+/* SIDEBAR */
 .cart{
   position:fixed;
   top:0;
   right:-400px;
   width:300px;
   height:100%;
-  background:#f0f0f0;
+  background:#f5f5f5;
   padding:20px;
   transition:0.3s;
+  box-shadow:-5px 0 15px rgba(0,0,0,0.2);
 }
 
+/* LIST */
+.cart ul{
+  list-style:none;
+  margin:10px 0;
+}
+
+.cart li{
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+/* INPUT */
+.cart input{
+  width:100%;
+  margin:5px 0;
+  padding:8px;
+}
+
+/* BUTTON CHECKOUT */
+.cart button{
+  margin-top:10px;
+  width:100%;
+  padding:10px;
+  border:none;
+  background:#2ecc71;
+  color:white;
+  cursor:pointer;
+}
+
+/* ================= NOTIF ================= */
 .notif{
   position:fixed;
   top:20px;
   right:20px;
   background:#2ecc71;
   color:white;
-  padding:10px;
+  padding:10px 15px;
+  border-radius:8px;
   display:none;
 }
