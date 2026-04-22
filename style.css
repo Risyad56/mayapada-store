@@ -8,11 +8,14 @@ body{
 /* HEADER */
 .header{
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:10px;
   padding:15px;
-  background:rgba(0,0,0,0.85);
+  background:rgba(0,0,0,0.8);
+}
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 .logo{width:40px;}
 .header h1{color:white;}
@@ -23,48 +26,70 @@ body{
   width:80%;padding:10px;border-radius:10px;border:none;
 }
 
-/* HERO */
+/* HERO FIX TOTAL */
 .hero{
   height:40vh;
   display:flex;
   justify-content:center;
   align-items:center;
+  text-align:center;
 }
+
+/* OVERLAY FIX */
 .overlay{
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.75);
   color:white;
-  padding:20px 30px;
-  border-radius:10px;
+  padding:25px 30px;
+  border-radius:12px;
+
+  /* 🔥 PAKSA TENGAH */
+  width:fit-content;
+  margin:auto;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+/* TEXT FIX */
+.overlay h2{
+  font-size:28px;
+  margin-bottom:10px;
+  text-align:center;
+}
+
+.overlay p{
+  font-size:16px;
   text-align:center;
 }
 
 /* FILTER */
 .filter{text-align:center;padding:15px;}
 .filter button{
-  margin:5px;padding:10px 15px;
-  border:none;border-radius:6px;
+  margin:5px;
+  padding:10px 15px;
+  border:none;
+  border-radius:6px;
   cursor:pointer;
 }
 
 /* PRODUK */
 .produk{
-  margin:60px auto;
-  max-width:1200px;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(8px);
+  margin:30px;
+  border-radius:15px;
   padding:20px;
 }
-
-/* FIX JUDUL (INI YANG BIKIN AMAN) */
 .produk h2{
-  width:fit-content;
-  margin:0 auto 30px;
-  padding:10px 20px;
-  background:rgba(0,0,0,0.7);
-  color:white;
-  border-radius:10px;
   text-align:center;
+  color:white;
+  margin-bottom:20px;
 }
 
-/* GRID */
 .produk-container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -74,44 +99,36 @@ body{
 /* CARD */
 .produk-card{
   background:white;
-  border-radius:12px;
-  overflow:hidden;
+  padding:15px;
+  border-radius:10px;
   box-shadow:0 5px 15px rgba(0,0,0,0.3);
   transition:0.3s;
-
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeInUp 0.5s forwards;
 }
-
 .produk-card:hover{
   transform:translateY(-5px);
 }
-
-/* IMAGE */
 .produk-card img{
   width:100%;
-  height:180px;
-  object-fit:cover;
+  border-radius:10px;
 }
-
-/* TEXT */
-.produk-card h3{padding:10px;}
-.harga{padding:0 10px;color:green;font-weight:bold;}
+.harga{
+  color:#27ae60;
+  font-weight:bold;
+}
 
 /* BUTTON */
 .produk-card button{
-  margin:10px;
-  width:calc(100% - 20px);
+  width:100%;
   padding:10px;
+  margin-top:10px;
   border:none;
+  border-radius:6px;
   background:#2ecc71;
   color:white;
-  border-radius:8px;
   cursor:pointer;
 }
 
-/* CART */
+/* CART BUTTON */
 .cart-btn{
   position:fixed;
   bottom:20px;
@@ -121,8 +138,10 @@ body{
   background:#2ecc71;
   color:white;
   border:none;
+  cursor:pointer;
 }
 
+/* CART */
 .cart{
   position:fixed;
   top:0;
@@ -133,15 +152,30 @@ body{
   padding:20px;
   transition:0.3s;
 }
-.cart.active{right:0;}
+.cart.active{
+  right:0;
+}
 
+/* CLOSE BUTTON */
 .close-cart{
   position:absolute;
   top:10px;
   right:10px;
+  background:red;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  border-radius:5px;
+  cursor:pointer;
 }
 
-/* ANIMASI */
-@keyframes fadeInUp{
-  to{opacity:1;transform:translateY(0);}
+/* NOTIF */
+.notif{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#2ecc71;
+  color:white;
+  padding:10px;
+  display:none;
 }

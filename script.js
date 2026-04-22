@@ -11,9 +11,9 @@ function tampilProduk(list){
   let container = document.getElementById("produk-list");
   container.innerHTML = "";
 
-  list.forEach((p,i)=>{
+  list.forEach(p=>{
     container.innerHTML += `
-      <div class="produk-card" style="animation-delay:${i*0.1}s">
+      <div class="produk-card">
         <img src="${p.img}">
         <h3>${p.nama}</h3>
         <p class="harga">Rp ${p.harga.toLocaleString("id-ID")}</p>
@@ -25,8 +25,8 @@ function tampilProduk(list){
 
 // FILTER
 function filterProduk(kat){
-  if(kat==="all") tampilProduk(produk);
-  else tampilProduk(produk.filter(p=>p.kategori===kat));
+  if(kat=="all") tampilProduk(produk);
+  else tampilProduk(produk.filter(p=>p.kategori==kat));
 }
 
 // SEARCH
@@ -40,10 +40,14 @@ function tambahKeranjang(nama,harga){
   let item = keranjang.find(i=>i.nama===nama);
   if(item) item.qty++;
   else keranjang.push({nama,harga,qty:1});
+
   updateCart();
+
+  let notif=document.getElementById("notif");
+  notif.style.display="block";
+  setTimeout(()=>notif.style.display="none",1000);
 }
 
-// UPDATE CART
 function updateCart(){
   let list = document.getElementById("list-keranjang");
   list.innerHTML="";
@@ -78,6 +82,11 @@ function toggleCart(){
 function tutupCart(){
   document.getElementById("cart").classList.remove("active");
 }
+
+// ESC CLOSE
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape") tutupCart();
+});
 
 // CHECKOUT
 function checkout(){
