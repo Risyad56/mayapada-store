@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Mayapada Store</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -42,26 +43,10 @@
   <div class="produk-container" id="produk-list"></div>
 </section>
 
-<!-- ADMIN PANEL -->
-<section class="admin">
-  <h2>Admin Panel</h2>
-
-  <input id="namaProduk" placeholder="Nama Produk">
-  <input id="hargaProduk" placeholder="Harga">
-  <input id="gambarProduk" placeholder="Nama file gambar (contoh: images.jpg)">
-  
-  <select id="kategoriProduk">
-    <option value="baju">Baju</option>
-    <option value="tas">Tas</option>
-    <option value="aksesoris">Aksesoris</option>
-  </select>
-
-  <button onclick="tambahProduk()">Tambah Produk</button>
-</section>
-
-<!-- CART -->
+<!-- CART BUTTON -->
 <button class="cart-btn" onclick="toggleCart()">🛒 <span id="count">0</span></button>
 
+<!-- CART -->
 <div class="cart" id="cart">
   <button class="close-cart" onclick="tutupCart()">❌</button>
 
@@ -75,8 +60,8 @@
   <button onclick="checkout()">Checkout WhatsApp</button>
 </div>
 
-<div class="notif" id="notif">Ditambahkan!</div>
+<div class="notif" id="notif">Ditambahkan ke keranjang</div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>

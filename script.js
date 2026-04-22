@@ -1,25 +1,10 @@
-let produk = JSON.parse(localStorage.getItem("produk")) || [];
+let produk = [
+  {nama:"Kaos HMTG", harga:50000, kategori:"baju", img:"images.jpg"},
+  {nama:"Tas HMTG", harga:75000, kategori:"tas", img:"images.jpg"},
+  {nama:"Stiker HMTG", harga:10000, kategori:"aksesoris", img:"images.jpg"}
+];
 
 let keranjang = [];
-
-// SIMPAN PRODUK
-function saveProduk(){
-  localStorage.setItem("produk", JSON.stringify(produk));
-}
-
-// TAMBAH PRODUK (ADMIN)
-function tambahProduk(){
-  let nama = document.getElementById("namaProduk").value;
-  let harga = parseInt(document.getElementById("hargaProduk").value);
-  let kategori = document.getElementById("kategoriProduk").value;
-  let img = document.getElementById("gambarProduk").value;
-
-  produk.push({nama,harga,kategori,img});
-  saveProduk();
-  tampilProduk(produk);
-
-  alert("Produk ditambahkan!");
-}
 
 // TAMPIL PRODUK
 function tampilProduk(list){
@@ -57,6 +42,10 @@ function tambahKeranjang(nama,harga){
   else keranjang.push({nama,harga,qty:1});
 
   updateCart();
+
+  let notif=document.getElementById("notif");
+  notif.style.display="block";
+  setTimeout(()=>notif.style.display="none",1000);
 }
 
 function updateCart(){
@@ -69,8 +58,10 @@ function updateCart(){
     total+=subtotal;
 
     list.innerHTML+=`
-      <li>${item.nama} (${item.qty}) - Rp ${subtotal.toLocaleString("id-ID")}
-      <button onclick="hapusItem(${i})">❌</button></li>
+      <li>
+        ${item.nama} (${item.qty}) - Rp ${subtotal.toLocaleString("id-ID")}
+        <button onclick="hapusItem(${i})">❌</button>
+      </li>
     `;
   });
 
@@ -83,10 +74,19 @@ function hapusItem(i){
   updateCart();
 }
 
-// CART
+// CART CONTROL
 function toggleCart(){
   document.getElementById("cart").classList.toggle("active");
 }
+
+function tutupCart(){
+  document.getElementById("cart").classList.remove("active");
+}
+
+// ESC CLOSE
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape") tutupCart();
+});
 
 // CHECKOUT
 function checkout(){
@@ -102,22 +102,3 @@ function checkout(){
 
 // INIT
 tampilProduk(produk);
-
-function tutupCart(){
-  document.getElementById("cart").classList.remove("active");
-}
-
-// klik luar cart = nutup
-window.onclick = function(e){
-  let cart = document.getElementById("cart");
-  if(e.target == cart){
-    cart.classList.remove("active");
-  }
-}
-
-// ESC keyboard = nutup
-document.addEventListener("keydown", function(e){
-  if(e.key === "Escape"){
-    tutupCart();
-  }
-});
