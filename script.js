@@ -102,3 +102,22 @@ function checkout(){
 
 // INIT
 tampilProduk(produk);
+
+function tutupCart(){
+  document.getElementById("cart").classList.remove("active");
+}
+
+// klik luar cart = nutup
+window.onclick = function(e){
+  let cart = document.getElementById("cart");
+  if(e.target == cart){
+    cart.classList.remove("active");
+  }
+}
+
+// ESC keyboard = nutup
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){
+    tutupCart();
+  }
+});
