@@ -76,30 +76,30 @@ body{
   cursor:pointer;
 }
 
-/* ===== UI PRO PRODUK ===== */
+/* ===== FIX FINAL PRODUK ===== */
 
 .produk{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(6px);
-  margin:40px auto;
-  border-radius:20px;
-  padding:30px;
+  background:transparent; /* ❗ HAPUS efek kotak besar */
+  margin:60px auto;
+  padding:20px;
   max-width:1200px;
 }
 
-/* JUDUL PRODUK */
+/* JUDUL PRODUK (FIX CENTER TANPA TRICK POSITION) */
 .produk h2{
-  display:inline-block;
-  background:rgba(0,0,0,0.6);
+  display:block;
+  width:fit-content;
+  margin:0 auto 40px;
+  padding:10px 25px;
+
+  background:rgba(0,0,0,0.7);
   color:white;
-  padding:12px 25px;
-  border-radius:10px;
-  font-size:26px;
+
+  border-radius:12px;
+  font-size:28px;
   text-align:center;
-  margin:0 auto 30px;
-  position:relative;
-  left:50%;
-  transform:translateX(-50%);
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* GRID */
