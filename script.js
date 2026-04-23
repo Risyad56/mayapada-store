@@ -6,20 +6,18 @@ let produk = [
 
 let keranjang = [];
 
-// TAMPIL PRODUK (FIX)
+// TAMPIL PRODUK
 function tampilProduk(list){
   let container = document.getElementById("produk-list");
   container.innerHTML = "";
 
-  list.forEach((p, i) => {
+  list.forEach(p=>{
     container.innerHTML += `
-      <div class="produk-card">
+      <div class="produk-card" onclick="bukaModal('${p.nama}',${p.harga},'${p.img}')">
+        <div class="badge">NEW</div>
         <img src="${p.img}">
         <h3>${p.nama}</h3>
         <p class="harga">Rp ${p.harga.toLocaleString("id-ID")}</p>
-        <button onclick="tambahKeranjang('${p.nama}', ${p.harga})">
-          + Keranjang
-        </button>
       </div>
     `;
   });
@@ -37,29 +35,45 @@ function cariProduk(){
   tampilProduk(produk.filter(p=>p.nama.toLowerCase().includes(key)));
 }
 
+// MODAL
+function bukaModal(nama,harga,img){
+  document.getElementById("modal").classList.add("active");
+  document.getElementById("modal-img").src = img;
+  document.getElementById("modal-nama").innerText = nama;
+  document.getElementById("modal-harga").innerText =
+    "Rp " + harga.toLocaleString("id-ID");
+
+  document.getElementById("modal-btn").onclick = function(){
+    tambahKeranjang(nama,harga);
+  };
+}
+
+function tutupModal(){
+  document.getElementById("modal").classList.remove("active");
+}
+
 // KERANJANG
-function tambahKeranjang(nama, harga){
+function tambahKeranjang(nama,harga){
   let item = keranjang.find(i=>i.nama===nama);
   if(item) item.qty++;
   else keranjang.push({nama,harga,qty:1});
-
   updateCart();
 }
 
+// UPDATE CART
 function updateCart(){
   let list = document.getElementById("list-keranjang");
-  list.innerHTML = "";
+  list.innerHTML="";
+  let total=0;
 
-  let total = 0;
+  keranjang.forEach((item,i)=>{
+    let subtotal=item.harga*item.qty;
+    total+=subtotal;
 
-  keranjang.forEach((item, index)=>{
-    let subtotal = item.harga * item.qty;
-    total += subtotal;
-
-    list.innerHTML += `
+    list.innerHTML+=`
       <li>
         ${item.nama} (${item.qty}) - Rp ${subtotal.toLocaleString("id-ID")}
-        <button onclick="hapusItem(${index})">❌</button>
+        <button onclick="hapusItem(${i})">❌</button>
       </li>
     `;
   });
@@ -73,11 +87,10 @@ function hapusItem(i){
   updateCart();
 }
 
-// CART CONTROL
+// CART
 function toggleCart(){
   document.getElementById("cart").classList.toggle("active");
 }
-
 function tutupCart(){
   document.getElementById("cart").classList.remove("active");
 }
@@ -87,11 +100,6 @@ function checkout(){
   let nama = document.getElementById("nama").value;
   let alamat = document.getElementById("alamat").value;
 
-  if(keranjang.length===0){
-    alert("Keranjang kosong!");
-    return;
-  }
-
   let text = keranjang.map(i=>`${i.nama} x${i.qty}`).join("%0A");
   let total = keranjang.reduce((a,b)=>a+b.harga*b.qty,0);
 
@@ -99,5 +107,5 @@ function checkout(){
   window.open(url);
 }
 
-// INIT WAJIB
+// INIT
 tampilProduk(produk);

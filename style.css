@@ -21,15 +21,9 @@ body{
 .header h1{color:white;}
 
 /* SEARCH */
-.search-box{
-  text-align:center;
-  padding:15px;
-}
+.search-box{text-align:center;padding:15px;}
 .search-box input{
-  width:80%;
-  padding:10px;
-  border-radius:10px;
-  border:none;
+  width:80%;padding:10px;border-radius:10px;border:none;
 }
 
 /* HERO */
@@ -48,15 +42,10 @@ body{
 }
 
 /* FILTER */
-.filter{
-  text-align:center;
-  padding:15px;
-}
+.filter{text-align:center;padding:15px;}
 .filter button{
-  margin:5px;
-  padding:10px;
-  border:none;
-  border-radius:6px;
+  margin:5px;padding:10px 15px;
+  border:none;border-radius:6px;
   cursor:pointer;
 }
 
@@ -88,38 +77,27 @@ body{
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  cursor:pointer;
   transition:0.3s;
 }
 .produk-card:hover{
   transform:translateY(-5px);
 }
-
 .produk-card img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
+.produk-card h3{padding:10px;}
+.harga{padding:0 10px;color:green;font-weight:bold;}
 
-.produk-card h3{
-  padding:10px;
-}
-
-.harga{
-  padding:0 10px 10px;
-  color:#27ae60;
-  font-weight:bold;
-}
-
-/* BUTTON */
-.produk-card button{
-  margin:10px;
-  width:calc(100% - 20px);
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  background:#2ecc71;
+/* BADGE */
+.badge{
+  position:absolute;
+  background:red;
   color:white;
-  cursor:pointer;
+  padding:5px;
+  font-size:12px;
 }
 
 /* CART */
@@ -133,7 +111,6 @@ body{
   color:white;
   border:none;
 }
-
 .cart{
   position:fixed;
   top:0;
@@ -144,6 +121,35 @@ body{
   padding:20px;
   transition:0.3s;
 }
-.cart.active{
-  right:0;
+.cart.active{right:0;}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+}
+.modal.active{display:flex;}
+
+.modal-content{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  width:300px;
+  text-align:center;
+}
+.modal-content img{
+  width:100%;
+  border-radius:10px;
+}
+.close-modal{
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:white;
+  cursor:pointer;
 }
