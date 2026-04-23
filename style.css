@@ -12,14 +12,24 @@ body{
   padding:15px;
   background:rgba(0,0,0,0.85);
 }
-.logo-box{display:flex;align-items:center;gap:10px;}
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 .logo{width:40px;}
 .header h1{color:white;}
 
 /* SEARCH */
-.search-box{text-align:center;padding:15px;}
+.search-box{
+  text-align:center;
+  padding:15px;
+}
 .search-box input{
-  width:80%;padding:10px;border-radius:10px;border:none;
+  width:80%;
+  padding:10px;
+  border-radius:10px;
+  border:none;
 }
 
 /* HERO */
@@ -38,9 +48,16 @@ body{
 }
 
 /* FILTER */
-.filter{text-align:center;padding:15px;}
+.filter{
+  text-align:center;
+  padding:15px;
+}
 .filter button{
-  margin:5px;padding:10px;border:none;border-radius:6px;
+  margin:5px;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
 }
 
 /* PRODUK */
@@ -72,7 +89,6 @@ body{
   overflow:hidden;
   box-shadow:0 5px 15px rgba(0,0,0,0.3);
   transition:0.3s;
-  cursor:pointer;
 }
 .produk-card:hover{
   transform:translateY(-5px);
@@ -84,63 +100,26 @@ body{
   object-fit:cover;
 }
 
-/* DISKON */
+.produk-card h3{
+  padding:10px;
+}
+
 .harga{
-  padding:0 10px;
+  padding:0 10px 10px;
   color:#27ae60;
   font-weight:bold;
 }
-.harga-coret{
-  text-decoration:line-through;
-  color:red;
-  font-size:12px;
-  padding-left:10px;
-}
 
-/* RATING */
-.rating{
-  padding:0 10px;
-  color:orange;
-}
-
-/* MODAL */
-.modal{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.7);
-  display:none;
-  justify-content:center;
-  align-items:center;
-}
-.modal.active{display:flex;}
-
-.modal-content{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  width:320px;
-  text-align:center;
-}
-
-.modal-content img{
-  width:100%;
-  border-radius:10px;
-}
-
-/* THUMB */
-.thumbs{
-  display:flex;
-  gap:5px;
-  margin:10px 0;
-  justify-content:center;
-}
-.thumbs img{
-  width:50px;
-  height:50px;
-  object-fit:cover;
+/* BUTTON */
+.produk-card button{
+  margin:10px;
+  width:calc(100% - 20px);
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#2ecc71;
+  color:white;
   cursor:pointer;
-  border-radius:5px;
 }
 
 /* CART */
@@ -154,6 +133,7 @@ body{
   color:white;
   border:none;
 }
+
 .cart{
   position:fixed;
   top:0;
@@ -164,4 +144,6 @@ body{
   padding:20px;
   transition:0.3s;
 }
-.cart.active{right:0;}
+.cart.active{
+  right:0;
+}
