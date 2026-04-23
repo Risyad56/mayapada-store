@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <title>Mayapada Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=final2">
+  <link rel="stylesheet" href="style.css?v=level3">
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="logo-box">
     <img src="images.jpg" class="logo">
@@ -16,12 +15,10 @@
   </div>
 </header>
 
-<!-- SEARCH -->
 <div class="search-box">
   <input type="text" id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="overlay">
     <h2>Selamat Datang</h2>
@@ -29,7 +26,6 @@
   </div>
 </section>
 
-<!-- FILTER -->
 <div class="filter">
   <button onclick="filterProduk('all')">Semua</button>
   <button onclick="filterProduk('baju')">Baju</button>
@@ -37,25 +33,20 @@
   <button onclick="filterProduk('aksesoris')">Aksesoris</button>
 </div>
 
-<!-- PRODUK -->
 <section class="produk">
   <h2>Produk Kami</h2>
   <div id="produk-list" class="produk-container"></div>
 </section>
 
-<!-- CART BUTTON -->
 <button class="cart-btn" onclick="toggleCart()">🛒 <span id="count">0</span></button>
 
-<!-- CART -->
 <div class="cart" id="cart">
   <button class="close-cart" onclick="tutupCart()">✖</button>
   <h2>Keranjang</h2>
   <ul id="list-keranjang"></ul>
   <p>Total: Rp <span id="total">0</span></p>
-
   <input id="nama" placeholder="Nama">
   <input id="alamat" placeholder="Alamat">
-
   <button onclick="checkout()">Checkout WhatsApp</button>
 </div>
 
@@ -65,15 +56,16 @@
     <span class="close-modal" onclick="tutupModal()">✖</span>
 
     <img id="modal-img">
+    <div class="thumbs" id="thumbs"></div>
+
     <h3 id="modal-nama"></h3>
+    <p id="modal-rating"></p>
     <p id="modal-harga"></p>
 
     <button id="modal-btn">+ Keranjang</button>
   </div>
 </div>
 
-<div class="notif" id="notif">Ditambahkan ke keranjang</div>
-
-<script src="script.js?v=final2"></script>
+<script src="script.js?v=level3"></script>
 </body>
 </html>
