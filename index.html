@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Mayapada Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=final2">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 <!-- PRODUK -->
 <section class="produk">
   <h2>Produk Kami</h2>
-  <div class="produk-container" id="produk-list"></div>
+  <div id="produk-list" class="produk-container"></div>
 </section>
 
 <!-- CART BUTTON -->
@@ -48,8 +48,7 @@
 
 <!-- CART -->
 <div class="cart" id="cart">
-  <button class="close-cart" onclick="tutupCart()">❌</button>
-
+  <button class="close-cart" onclick="tutupCart()">✖</button>
   <h2>Keranjang</h2>
   <ul id="list-keranjang"></ul>
   <p>Total: Rp <span id="total">0</span></p>
@@ -60,8 +59,21 @@
   <button onclick="checkout()">Checkout WhatsApp</button>
 </div>
 
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="tutupModal()">✖</span>
+
+    <img id="modal-img">
+    <h3 id="modal-nama"></h3>
+    <p id="modal-harga"></p>
+
+    <button id="modal-btn">+ Keranjang</button>
+  </div>
+</div>
+
 <div class="notif" id="notif">Ditambahkan ke keranjang</div>
 
-<script src="script.js?v=4"></script>
+<script src="script.js?v=final2"></script>
 </body>
 </html>

@@ -13,23 +13,20 @@ function tampilProduk(list){
 
   list.forEach(p=>{
     container.innerHTML += `
-  <div class="produk-card">
-    <div class="badge">NEW</div>
-    <img src="${p.img}">
-    <h3>${p.nama}</h3>
-    <p class="harga">Rp ${p.harga.toLocaleString("id-ID")}</p>
-    <button onclick="tambahKeranjang('${p.nama}',${p.harga})">
-      + Keranjang
-    </button>
-  </div>
+      <div class="produk-card" onclick="bukaModal('${p.nama}',${p.harga},'${p.img}')">
+        <div class="badge">NEW</div>
+        <img src="${p.img}">
+        <h3>${p.nama}</h3>
+        <p class="harga">Rp ${p.harga.toLocaleString("id-ID")}</p>
+      </div>
     `;
   });
 }
 
 // FILTER
 function filterProduk(kat){
-  if(kat=="all") tampilProduk(produk);
-  else tampilProduk(produk.filter(p=>p.kategori==kat));
+  if(kat==="all") tampilProduk(produk);
+  else tampilProduk(produk.filter(p=>p.kategori===kat));
 }
 
 // SEARCH
@@ -38,19 +35,32 @@ function cariProduk(){
   tampilProduk(produk.filter(p=>p.nama.toLowerCase().includes(key)));
 }
 
+// MODAL
+function bukaModal(nama,harga,img){
+  document.getElementById("modal").classList.add("active");
+  document.getElementById("modal-img").src = img;
+  document.getElementById("modal-nama").innerText = nama;
+  document.getElementById("modal-harga").innerText =
+    "Rp " + harga.toLocaleString("id-ID");
+
+  document.getElementById("modal-btn").onclick = function(){
+    tambahKeranjang(nama,harga);
+  };
+}
+
+function tutupModal(){
+  document.getElementById("modal").classList.remove("active");
+}
+
 // KERANJANG
 function tambahKeranjang(nama,harga){
   let item = keranjang.find(i=>i.nama===nama);
   if(item) item.qty++;
   else keranjang.push({nama,harga,qty:1});
-
   updateCart();
-
-  let notif=document.getElementById("notif");
-  notif.style.display="block";
-  setTimeout(()=>notif.style.display="none",1000);
 }
 
+// UPDATE CART
 function updateCart(){
   let list = document.getElementById("list-keranjang");
   list.innerHTML="";
@@ -77,19 +87,13 @@ function hapusItem(i){
   updateCart();
 }
 
-// CART CONTROL
+// CART
 function toggleCart(){
   document.getElementById("cart").classList.toggle("active");
 }
-
 function tutupCart(){
   document.getElementById("cart").classList.remove("active");
 }
-
-// ESC CLOSE
-document.addEventListener("keydown",function(e){
-  if(e.key==="Escape") tutupCart();
-});
 
 // CHECKOUT
 function checkout(){
